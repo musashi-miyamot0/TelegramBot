@@ -6,10 +6,9 @@ from controller import control_variable, Control
 from filters.user_valid import ValidationUser
 from filters.valid_getfile import ValidGetDocument
 from filters.validation_var_for_keyboard import ValidationVariable, ValidAllVariables
-from Modules.screenshot_pc import ScreenshotPC
+from modules.screenshot_pc import ScreenshotPC
 import all_keyboard as kb
 from filters.validation_var_for_keyboard import ValidHotKey
-from handler_Errors.main_error import FailedToEnterContext
 from filters.terminal_valid import TerminalValidation
 router_windows = Router()
 
