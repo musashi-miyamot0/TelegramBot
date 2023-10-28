@@ -2,7 +2,7 @@
 import functools
 import platform
 
-from Modules import (get_file, keyboard_module, module_pycaw,
+from modules import (get_file, keyboard_module, module_pycaw,
                      nutrition_module, screenshot_pc, terminal)
 
 

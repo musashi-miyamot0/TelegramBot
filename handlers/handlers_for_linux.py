@@ -6,11 +6,11 @@ from aiogram import Router, F
 from aiogram.types import Message
 
 import all_keyboard as kb
-from Filters.terminal_valid import TerminalValidation
-from Filters.user_valid import ValidationUser
-from Filters.valid_getfile import ValidGetDocument
-from Filters.validation_var_for_keyboard import ValidationVariable, ValidAllVariables
-from Filters.validation_var_for_keyboard import ValidHotKey
+from filters.terminal_valid import TerminalValidation
+from filters.user_valid import ValidationUser
+from filters.valid_getfile import ValidGetDocument
+from filters.validation_var_for_keyboard import ValidationVariable, ValidAllVariables
+from filters.validation_var_for_keyboard import ValidHotKey
 from controller import Control, control_variable
 router_linux = Router()
 

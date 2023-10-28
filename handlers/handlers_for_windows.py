@@ -3,14 +3,14 @@ from aiogram.types import Message
 
 
 from controller import control_variable, Control
-from Filters.user_valid import ValidationUser
-from Filters.valid_getfile import ValidGetDocument
-from Filters.validation_var_for_keyboard import ValidationVariable, ValidAllVariables
+from filters.user_valid import ValidationUser
+from filters.valid_getfile import ValidGetDocument
+from filters.validation_var_for_keyboard import ValidationVariable, ValidAllVariables
 from Modules.screenshot_pc import ScreenshotPC
 import all_keyboard as kb
-from Filters.validation_var_for_keyboard import ValidHotKey
-from Handler_Errors.main_error import FailedToEnterContext
-from Filters.terminal_valid import TerminalValidation
+from filters.validation_var_for_keyboard import ValidHotKey
+from handler_Errors.main_error import FailedToEnterContext
+from filters.terminal_valid import TerminalValidation
 router_windows = Router()
 
 
@@ -210,6 +210,8 @@ async def get_document_from_pc(message: Message):
     with Control() as cn:
         await cn.file.get_file(message.text, message)
     await message.delete()
+
+
 @router_windows.message(ValidationUser(), ValidAllVariables(), F.text == 'Терминал👨🏽‍💻')
 async def terminal(message: Message):
 
@@ -219,10 +221,12 @@ async def terminal(message: Message):
     else:
         await message.answer(text='Такой переменой нет')
 
-@router_windows.message(TerminalValidation(),ValidationUser())
+
+@router_windows.message(TerminalValidation(), ValidationUser())
 async def terminal_validation(message: Message):
     with Control() as cn:
         await cn.terminal.os_pc(message.text, message)
+
 
 @router_windows.message(ValidationUser(), ValidAllVariables(), F.text == 'Горячие клавиши🔥')
 async def hot_key(message: Message):
