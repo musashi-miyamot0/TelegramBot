@@ -21,11 +21,11 @@ class Run:
 
     def validation(self, os_sys):
         if os_sys == "Linux":
-            from Handlers.handlers_for_linux import router_linux
+            from handlers.handlers_for_linux import router_linux
             self.dp.include_router(router_linux)
             print(f"Операционная система: {os_sys}")
         else:
-            from Handlers.handlers_for_windows import router_windows
+            from handlers.handlers_for_windows import router_windows
             self.dp.include_router(router_windows)
             print(f"Операционная система: {os_sys}")
 
