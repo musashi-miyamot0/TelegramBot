@@ -27,12 +27,10 @@ class ScreenshotPC:
         '''Делает скриншот экран инструментом scrot. ONLY linux
             Принимает message'''
         await message.delete()
-        try:
             keyboard = getattr(self.control_variable, 'tracking_logic_keyboard')
             terminal = getattr(self.control_variable, 'tracking_logic_terminal')
-        except Exception:
-            raise NotAtributeError('oops! such an attribute does not exist or the name passed is incorrect.'
-                                   'line: 32, 33')
+       
+            
         if not (keyboard and terminal):
             subprocess.call(['scrot', '/home/deogen/pythonProject2/screen.png'])
             file = FSInputFile('/home/deogen/pythonProject2/screen.png')
